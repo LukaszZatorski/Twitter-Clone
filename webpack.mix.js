@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +11,21 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js("resources/js/app.js", "public/js").sass(
+    "resources/sass/app.scss",
+    "public/css"
+);
+
+// mix.browserSync("twitterclone.test");
+
+mix.browserSync({
+    proxy: "twitterclone.test",
+    open: false,
+    files: ["public/assets/**/*", "public/index.php", "resources/views/**/*"],
+    host: "192.168.10.10",
+    port: 3000,
+    watchOptions: {
+        usePolling: true,
+        interval: 500
+    }
+});
