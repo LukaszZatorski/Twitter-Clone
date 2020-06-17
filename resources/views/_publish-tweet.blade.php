@@ -14,9 +14,9 @@
 
         <hr>
         <footer class="d-flex justify-content-between">
-            <a href="#">
+            <a href="{{route('profile.show', auth()->user()->username)}}">
                 <img
-                    src="https://avatars.dicebear.com/api/male/DonZed.svg?b=%2310a6cb&w=50&h=50"
+                    src="https://avatars.dicebear.com/api/male/{{auth()->user()->username}}.svg?b=%2310a6cb&w=50&h=50"
                     alt=""
                     class="rounded-circle"
                 >

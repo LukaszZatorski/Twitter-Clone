@@ -14,7 +14,7 @@
     <li class="mb-4">
         <a
             class="h3 font-weight-bold text-decoration-none text-dark"
-            href="#"
+            href="{{route('profile.show', auth()->user()->username)}}"
         >Profile</a>
     </li>
 </ul>

@@ -14,7 +14,7 @@
         content="{{ csrf_token() }}"
     >
 
-    <title> @isset($title) {{$title . " / "}} @endisset {{ config('app.name', 'Tweets') }}</title>
+    <title> {{$title}}</title>
 
     <!-- Scripts -->
     <script

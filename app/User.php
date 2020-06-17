@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Tweet');
     }
+
+    public function tweetsCount()
+    {
+        return $this->tweets()->count();
+    }
 }
