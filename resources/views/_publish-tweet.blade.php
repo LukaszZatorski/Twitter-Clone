@@ -1,6 +1,6 @@
 <div class="border border-info rounded-lg p-3">
     <form
-        action="#"
+        action="/tweets"
         method="POST"
     >
         @csrf
