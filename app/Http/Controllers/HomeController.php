@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tweet;
 
 class HomeController extends Controller
 {
@@ -16,13 +17,16 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+
+        $friends = auth()->user()->follows()->pluck('id');
+
+        return view('home', [
+            'tweets' => Tweet::whereIn('user_id', $friends)
+                        ->orWhere('user_id', auth()->user()->id)
+                        ->latest()
+                        ->paginate(20)
+            ]);
     }
 }

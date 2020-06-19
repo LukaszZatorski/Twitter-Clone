@@ -1,4 +1,4 @@
-<div class="border border-info rounded-lg p-3">
+<div class="border border-info rounded-lg mb-1 p-3">
     <form
         action="/tweets"
         method="POST"
