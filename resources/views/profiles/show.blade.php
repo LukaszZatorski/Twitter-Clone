@@ -25,12 +25,22 @@
             >
         </div>
         <div class="col-4 d-flex justify-content-end h-50 mt-2">
-            <button
-                type="submit"
-                class="btn btn-primary rounded-pill px-4"
+            @auth
+            @unless (current_user()->is($user))
+            <form
+                action="{{route('follow', $user->username)}}"
+                method="POST"
             >
-                Follow
-            </button>
+                @csrf
+                <button
+                    type="submit"
+                    class="btn btn-primary rounded-pill px-4 font-weight-bold"
+                >
+                    {{current_user()->following($user) ? 'Unfollow Me' : 'Follow Me'}}
+                </button>
+            </form>
+            @endunless
+            @endauth
         </div>
     </div>
 

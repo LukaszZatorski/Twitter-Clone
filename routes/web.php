@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/tweets', 'TweetController@store');
 Route::get('/explore', 'ExploreController')->name('explore');
 Route::get('/profiles/{user:username}', 'ProfileController@show')->name('profile.show');
+Route::post('/profiles/{user:username}/follow', 'FollowController@store')->name('follow');
