@@ -11,7 +11,6 @@
                 <p class="col font-weight-light">{{$user->username}}</p>
                 <p class="col font-weight-light">{{$user->tweetsCount()}} Tweets</p>
             </div>
-            <p class="font-weight-light">Joined {{$user->created_at->diffForHumans()}}</p>
         </div>
         <div
             class="col-4 d-flex justify-content-center "
@@ -42,6 +41,14 @@
             @endunless
             @endauth
         </div>
+    </div>
+    <div class="mt-n5">
+        @isset($user->description)
+        <p>
+            {{$user->description}}
+        </p>
+        @endisset
+        <p class="text-black-50">Joined {{$user->created_at->diffForHumans()}}</p>
     </div>
 
     @forelse ($tweets as $tweet)
