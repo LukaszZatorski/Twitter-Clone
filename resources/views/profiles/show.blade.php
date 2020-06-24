@@ -24,6 +24,14 @@
             >
         </div>
         <div class="col-4 d-flex justify-content-end h-50 mt-2">
+            @can('edit', $user)
+            <a
+                href="{{route('profile.edit', $user->username)}}"
+                class="btn btn-primary rounded-pill px-4 font-weight-bold"
+            >
+                Edit Profile
+            </a>
+            @endcan
             @auth
             @unless (current_user()->is($user))
             <form
