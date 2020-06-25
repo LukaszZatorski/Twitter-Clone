@@ -15,7 +15,7 @@ class TweetController extends Controller
     public function store(Request $request)
     {
        $attributes = $request->validate([
-           'body' => 'required|max:255'
+           'body' => 'required|max:10000'
        ]);
 
        Tweet::create([
