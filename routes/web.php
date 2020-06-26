@@ -28,4 +28,5 @@ Route::middleware('auth')->group(function(){
     Route::get('/profiles/{user:username}/edit', 'ProfileController@edit')->name('profile.edit')->middleware('can:edit,user');
     Route::patch('/profiles/{user:username}', 'ProfileController@update')->name('profile.update')->middleware('can:edit,user');
     Route::post('/profiles/{user:username}/follow', 'FollowController@store')->name('follow');
+    Route::post('/tweets/{tweet}/like', 'LikeController@store')->name('like');
 });

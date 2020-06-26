@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tweet extends Model
 {
+
+    use Likable;
+
     protected $fillable = [
         'body', 'user_id'
     ];
